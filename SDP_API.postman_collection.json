@@ -1,0 +1,29 @@
+{
+  "info": {
+    "name": "SDP API Collection",
+    "_postman_id": "ceyda-sdp-api-collection",
+    "description": "CRUD endpoints for Scale Development Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET Hello",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/hello"
+      }
+    },
+    {
+      "name": "POST Scale",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"scale\": {\n    \"title\": \"Depresyon Ölçeği\",\n    \"description\": \"Bu ölçek bireylerin depresyon düzeyini ölçer.\",\n    \"category\": \"Psikoloji\"\n  }\n}"
+        },
+        "url": "http://localhost:3000/api/v1/scales"
+      }
+    }
+  ]
+}

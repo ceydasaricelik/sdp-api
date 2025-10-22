@@ -1,0 +1,5 @@
+[User]1-0..*[Response]
+[Scale]1-0..*[Question]
+[Question]1-0..*[Option]
+[Question]1-0..*[Response]
+[Option]1-0..*[Response]
