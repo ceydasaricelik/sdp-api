@@ -1,0 +1,674 @@
+{
+  "info": {
+    "name": "SDP API Collection",
+    "description": "Comprehensive API collection for SDP (Survey Data Platform) API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Hello Endpoint",
+      "item": [
+        {
+          "name": "Hello - HTML",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            },
+            "description": "Root endpoint that returns HTML welcome message"
+          },
+          "response": []
+        },
+        {
+          "name": "Hello - JSON",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/hello",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "hello"]
+            },
+            "description": "Hello endpoint that returns JSON welcome message"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users"]
+            },
+            "description": "Retrieve all users"
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "1"]
+            },
+            "description": "Retrieve a specific user by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": {\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"role\": \"participant\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users"]
+            },
+            "description": "Create a new user"
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": {\n    \"name\": \"John Smith\",\n    \"email\": \"john.smith@example.com\",\n    \"role\": \"admin\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "1"]
+            },
+            "description": "Update an existing user"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "users", "1"]
+            },
+            "description": "Delete a user"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Scales",
+      "item": [
+        {
+          "name": "Get All Scales",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/scales",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "scales"]
+            },
+            "description": "Retrieve all scales"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Scale by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/scales/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "scales", "1"]
+            },
+            "description": "Retrieve a specific scale by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Scale",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scale\": {\n    \"title\": \"Customer Satisfaction Scale\",\n    \"description\": \"A scale to measure customer satisfaction levels\",\n    \"category\": \"satisfaction\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/scales",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "scales"]
+            },
+            "description": "Create a new scale"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Scale",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scale\": {\n    \"title\": \"Updated Customer Satisfaction Scale\",\n    \"description\": \"Updated description for customer satisfaction measurement\",\n    \"category\": \"customer_experience\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/scales/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "scales", "1"]
+            },
+            "description": "Update an existing scale"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Scale",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/scales/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "scales", "1"]
+            },
+            "description": "Delete a scale"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Questions",
+      "item": [
+        {
+          "name": "Get All Questions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/questions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "questions"]
+            },
+            "description": "Retrieve all questions"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Question by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/questions/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "questions", "1"]
+            },
+            "description": "Retrieve a specific question by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": {\n    \"scale_id\": 1,\n    \"content\": \"How satisfied are you with our service?\",\n    \"order\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/questions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "questions"]
+            },
+            "description": "Create a new question"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Question",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": {\n    \"scale_id\": 1,\n    \"content\": \"How satisfied are you with our updated service?\",\n    \"order\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/questions/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "questions", "1"]
+            },
+            "description": "Update an existing question"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Question",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/questions/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "questions", "1"]
+            },
+            "description": "Delete a question"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Options",
+      "item": [
+        {
+          "name": "Get All Options",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/options",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "options"]
+            },
+            "description": "Retrieve all options"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Option by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/options/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "options", "1"]
+            },
+            "description": "Retrieve a specific option by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Option",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"option\": {\n    \"question_id\": 1,\n    \"text\": \"Very Satisfied\",\n    \"value\": 5\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/options",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "options"]
+            },
+            "description": "Create a new option"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Option",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"option\": {\n    \"question_id\": 1,\n    \"text\": \"Extremely Satisfied\",\n    \"value\": 5\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/options/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "options", "1"]
+            },
+            "description": "Update an existing option"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Option",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/options/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "options", "1"]
+            },
+            "description": "Delete an option"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Responses",
+      "item": [
+        {
+          "name": "Get All Responses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/responses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "responses"]
+            },
+            "description": "Retrieve all responses"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Response by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/responses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "responses", "1"]
+            },
+            "description": "Retrieve a specific response by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Response",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"response\": {\n    \"user_id\": 1,\n    \"question_id\": 1,\n    \"option_id\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/responses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "responses"]
+            },
+            "description": "Create a new response"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Response",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"response\": {\n    \"user_id\": 1,\n    \"question_id\": 1,\n    \"option_id\": 2\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/responses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "responses", "1"]
+            },
+            "description": "Update an existing response"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Response",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/responses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "responses", "1"]
+            },
+            "description": "Delete a response"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Test Scenarios",
+      "item": [
+        {
+          "name": "Complete Survey Flow",
+          "item": [
+            {
+              "name": "1. Create Scale",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scale\": {\n    \"title\": \"Employee Satisfaction Survey\",\n    \"description\": \"Survey to measure employee satisfaction\",\n    \"category\": \"hr\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/scales",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "v1", "scales"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "2. Create Questions",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"question\": {\n    \"scale_id\": 1,\n    \"content\": \"How satisfied are you with your current role?\",\n    \"order\": 1\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/questions",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "v1", "questions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "3. Create Options",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"option\": {\n    \"question_id\": 1,\n    \"text\": \"Very Dissatisfied\",\n    \"value\": 1\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/options",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "v1", "options"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "4. Create User",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user\": {\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\",\n    \"role\": \"participant\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/users",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "v1", "users"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "5. Submit Response",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"response\": {\n    \"user_id\": 1,\n    \"question_id\": 1,\n    \"option_id\": 1\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/responses",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "v1", "responses"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Pre-request script for all requests",
+          "console.log('Making request to:', pm.request.url.toString());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Test script for all requests",
+          "pm.test('Status code is successful', function () {",
+          "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+          "});",
+          "",
+          "pm.test('Response time is less than 5000ms', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+          "});",
+          "",
+          "pm.test('Response has valid JSON', function () {",
+          "    if (pm.response.headers.get('Content-Type') && pm.response.headers.get('Content-Type').includes('application/json')) {",
+          "        pm.expect(() => JSON.parse(pm.response.text())).to.not.throw();",
+          "    }",
+          "});"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "info": {
+    "name": "SDP API",
+    "_postman_id": "7c0e6485-7f8a-4b9b-8c08-8c3c046c2c2b",
+    "description": "Core SDP API requests for user management.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.variables.set(\"ts\", Date.now());"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "GET Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 or 201\", function () {",
+                  "    pm.expect([200, 201]).to.include(pm.response.code);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has JSON content type\", function () {",
+                  "    pm.expect(pm.response.headers.has(\"Content-Type\"), \"missing Content-Type header\").to.be.true;",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\").toLowerCase()).to.include(\"application/json\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response is valid JSON\", function () {",
+                  "    pm.expect(function () { pm.response.json(); }).to.not.throw();",
+                  "});",
+                  "",
+                  "pm.test(\"Response body is not empty\", function () {",
+                  "    var body = pm.response.text();",
+                  "    pm.expect(body && body.trim().length, \"body should not be empty\").to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is under 1500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1500);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has expected user fields\", function () {",
+                  "    var data = pm.response.json();",
+                  "    if (Array.isArray(data)) {",
+                  "        if (data.length === 0) {",
+                  "            pm.expect(data).to.be.an('array');",
+                  "            return;",
+                  "        }",
+                  "        var user = data[0];",
+                  "        pm.expect(user).to.be.an('object');",
+                  "    } else {",
+                  "        var user = data;",
+                  "        pm.expect(user).to.be.an('object');",
+                  "    }",
+                  "    ['id', 'name', 'email'].forEach(function (field) {",
+                  "        pm.expect(user, 'missing field ' + field).to.have.property(field);",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST Users",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwt}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user\": {\n    \"name\": \"Test User\",\n    \"email\": \"test+{{ts}}@example.com\",\n    \"role\": \"member\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 or 201\", function () {",
+                  "    pm.expect([200, 201]).to.include(pm.response.code);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has JSON content type\", function () {",
+                  "    pm.expect(pm.response.headers.has(\"Content-Type\"), \"missing Content-Type header\").to.be.true;",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\").toLowerCase()).to.include(\"application/json\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response is valid JSON\", function () {",
+                  "    pm.expect(function () { pm.response.json(); }).to.not.throw();",
+                  "});",
+                  "",
+                  "pm.test(\"Response body is not empty\", function () {",
+                  "    var body = pm.response.text();",
+                  "    pm.expect(body && body.trim().length, \"body should not be empty\").to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is under 1500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1500);",
+                  "});",
+                  "",
+                  "pm.test(\"Created user has expected fields\", function () {",
+                  "    var user = pm.response.json();",
+                  "    pm.expect(user).to.be.an('object');",
+                  "    ['id', 'name', 'email', 'role'].forEach(function (field) {",
+                  "        pm.expect(user, 'missing field ' + field).to.have.property(field);",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
