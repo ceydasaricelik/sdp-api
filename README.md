@@ -151,7 +151,7 @@ Her iki test de başarıyla geçti. Cypress test senaryolarını hem ekran gör�
 ## 📺 YouTube Demo Videosu
 
 🎬 **Tam test sürecini izle:**  
-👉 [YouTube Demo Video](https://youtube.com/your-video-link)
+👉 [YouTube Demo Video](https://youtu.be/HlLIycCxB-o)
 
 ---
 
