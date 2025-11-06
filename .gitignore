@@ -30,3 +30,19 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+# .gitignore’a güvenli eklemeler
+Add-Content .gitignore "node_modules/`n"
+Add-Content .gitignore ".env`n"
+Add-Content .gitignore ".DS_Store`n"
+
+# Takılı staged dosyaları kaldır (repo geçmişinden değil, index’ten)
+git rm -r --cached node_modules
+
+# Postman ve raporları ekle (bunlar kalsın)
+git add postman/ reports/ .gitignore
+
+# İstersen diğer kod değişikliklerini de ekle:
+# git add .
+
+git commit -m "Postman/Newman: nested user payload, perf+schema tests, reports; ignore node_modules"
+git push origin main

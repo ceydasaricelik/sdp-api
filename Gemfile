@@ -36,7 +36,8 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # CORS yönetimi (frontend-backend bağlantısı için ileride eklenebilir)
-# gem "rack-cors"
+gem "rack-cors"
+gem 'jwt'
 
 group :development, :test do
   # Debugging araçları

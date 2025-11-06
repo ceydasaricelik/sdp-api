@@ -1,0 +1,12 @@
+{
+  "name": "sdp-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "postman:test": "newman run postman/SDP_API.postman_collection.json -e postman/SDP_local.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export reports/sdp_report.html --reporter-json-export reports/sdp_report.json"
+  },
+  "devDependencies": {
+    "newman": "^6.2.0",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}
