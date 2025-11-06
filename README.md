@@ -128,9 +128,67 @@ Tarayıcıda aç:
 
 ---
 
-🩷 Katkıda Bulunan
+## 🎥 Test Results – Cypress E2E Validation (Rails API + Lovable Frontend)
 
-👑 Halide Ceyda Sarıçelik  
-📅 Tarih: 22.10.2025
+Bu bölüm, **Scale Development Platform (SDP API)** projesinin uçtan uca test otomasyon sürecini göstermektedir.  
+**Cypress** kullanılarak **Ruby on Rails 8 API** ve **Lovable Frontend** arasındaki entegrasyon **BDD (Behavior-Driven Development)** yaklaşımıyla doğrulanmıştır.
 
-“Kendini bulmak, kabullenmek ve sevmek yolunda, kod satırlarında bile ışık saçan bir proje.” 💫
+---
+
+### ✅ Test Senaryoları
+
+- **GET `/api/v1/users` → 200 OK (Happy Path)`**
+- **GET `/api/v1/error` → 500 Internal Server Error (Error Path)`**
+
+Her iki test de başarıyla geçti. Cypress test senaryolarını hem ekran görüntüleriyle hem video kaydıyla belgelemiştir. 🎯
+
+> 📝 **Not:**  
+> Her iki senaryo da başarılı çalışmıştır. Ancak Cypress tarafından oluşturulan videoda  
+> “error path” kısmı birkaç saniye erken sonlanmaktadır — bu yalnızca video kesintisidir, testler %100 başarılıdır. ✅🎥
+
+---
+
+## 📺 YouTube Demo Videosu
+
+🎬 **Tam test sürecini izle:**  
+👉 [YouTube Demo Video](https://youtube.com/your-video-link)
+
+---
+
+## 💻 Kullanılan Teknolojiler
+
+| Katman | Teknoloji |
+|--------|------------|
+| **Backend** | Ruby on Rails 8.0 (API-only mode) |
+| **Frontend** | Lovable AI Studio |
+| **Database** | SQLite |
+| **Testing** | Cypress + Cucumber (Gherkin Syntax) |
+| **CORS & ENV** | rack-cors + dotenv-rails |
+| **Yöntem** | Behavior-Driven Development (BDD) |
+
+---
+
+## 🎓 Mentorlar & Teşekkür
+
+Bu proje sürecinde rehberlikleri ve destekleriyle her aşamada yanımda olan  
+**Nurettin Şenyer** ve **Ömer Durmuş** hocalarıma  
+teşekkürlerimi sunuyorum. 💐
+
+---
+
+## 📂 İlgili Bağlantılar
+
+- 🔗 **Backend (Rails API):** [https://github.com/ceydasaricelik/sdp-api](https://github.com/ceydasaricelik/sdp-api)  
+- 🔗 **Frontend (Lovable):** [https://github.com/ceydasaricelik/sdp-frontend](https://github.com/ceydasaricelik/sdp-frontend)  
+- 🎥 **Demo Video:** [YouTube linki](https://youtu.be/HlLIycCxB-o)
+
+---
+
+## 🩷 Katkıda Bulunan
+
+👑 **Halide Ceyda Sarıçelik**
+
+---
+
+#RubyOnRails #Cypress #BDD #FullStackDevelopment #AutomationTesting #SoftwareEngineering #UniversityProject #SDPAPI
+
