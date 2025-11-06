@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.1"
 
 # ✅ SQLite3 - doğru platformla, derlenebilir sürüm
-gem "sqlite3", "~> 2.7"
+gem "sqlite3", "~> 2.8"
 
 # Web sunucusu (default olarak Puma)
 gem "puma", ">= 5.0"
