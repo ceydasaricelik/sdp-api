@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Rails ana çatısı
-gem "rails", "~> 8.0.1"
+gem "rails", "~> 8.1.1"
 
 # ✅ SQLite3 - doğru platformla, derlenebilir sürüm
 gem "sqlite3", "~> 2.7"
